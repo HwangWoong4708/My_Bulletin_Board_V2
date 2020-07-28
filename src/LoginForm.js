@@ -1,6 +1,8 @@
 import React from "react";
 import { Image, Form, Button } from "react-bootstrap";
 import "./LoginForm.css";
+import { Link } from "react-router-dom";
+
 class LoginForm extends React.Component {
   render() {
     return (
@@ -19,9 +21,11 @@ class LoginForm extends React.Component {
         <Button variant="dark" type="button" block>
           Log In
         </Button>
-        <Button variant="dark" type="button" block>
-          Sign Up
-        </Button>
+        <Link to="signUp">
+          <Button variant="dark" type="button" block>
+            Sign Up
+          </Button>
+        </Link>
       </Form>
     );
   }
