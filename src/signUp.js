@@ -16,7 +16,7 @@ class signUp extends React.Component {
 
     if (signupEmail === "" || signupEmail === undefined) {
       /*이메일 입력란이 비어있을때*/
-      alert("Please Enter your email address.");
+      alert("Please Enter email address.");
       this.signupEmail.focus(); /*커서 다시 이메일 입력창으로*/
       return;
     } else if (
@@ -54,7 +54,29 @@ class signUp extends React.Component {
       name: this.signupName.value,
       password: this.signupPassword.value,
     };
-    axios.post("http://localhost:8080/member/signup", send_param); //send_param에 담긴 가입정보 8080포트로 전송.
+    axios
+      .post("http://localhost:8080/member/signup", send_param) //send_param에 담긴 가입정보 8080포트로 전송.
+      .then(returnData => {
+        if (returnData.data.message) {
+          alert(returnData.data.message);
+
+          //이메일 중복 체크
+          if (returnData.data.dupYn === "1") {
+            this.signupEmail.value = "";
+            this.signupEmail.focus();
+          } else {
+            this.signupEmail.value = "";
+            this.signupName.value = "";
+            this.signupPassword.value = "";
+          }
+        } else {
+          alert("회원가입 실패");
+        }
+      })
+      //에러
+      .catch(err => {
+        console.log(err);
+      });
   };
   render() {
     return (
@@ -90,7 +112,9 @@ class signUp extends React.Component {
         <Button variant="dark" onClick={this.signup} type="button" block>
           Sign Up
         </Button>
-        <Form.Text className="text-muted">You already have account?</Form.Text>
+        <Form.Text className="text-muted">
+          You already have account? / Sign Up Complete?
+        </Form.Text>
         <Link to="/">
           <Button variant="dark" type="button" block>
             Go to Login Page
