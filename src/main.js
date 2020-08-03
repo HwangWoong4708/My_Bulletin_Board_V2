@@ -5,6 +5,8 @@ import { Route } from "react-router-dom";
 import $ from "jquery";
 import {} from "jquery.cookie";
 import BoardForm from "./Board_Form";
+import BoardWrite from "./Board_Write";
+import BoardDetail from "./Board_Detail";
 
 class main extends React.Component {
   render() {
@@ -22,6 +24,9 @@ class main extends React.Component {
     return (
       <div>
         <Route path="/signUp" component={signUp}></Route>
+        <Route path="/BoardWrite" component={BoardWrite}></Route>
+        <Route path="/board/detail" component={BoardDetail}></Route>
+
         {mainForm}
       </div>
     );

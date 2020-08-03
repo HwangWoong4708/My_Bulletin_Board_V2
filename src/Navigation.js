@@ -1,5 +1,6 @@
 import React from "react";
 import { Navbar, Button } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 import $ from "jquery";
 import {} from "jquery.cookie";
 import axios from "axios";
@@ -44,9 +45,16 @@ class Navigation extends React.Component {
       <Navbar bg="dark" variant="dark">
         <Navbar.Brand href="/">Bulletin Board v2</Navbar.Brand>
         <Navbar.Toggle />
-        <Button style={buttonStyle} onClick={this.logout} variant="primary">
-          로그아웃
+        <NavLink to="/BoardWrite">
+          <Button style={buttonStyle} variant="dark">
+            Write
+          </Button>
+        </NavLink>
+
+        <Button style={buttonStyle} onClick={this.logout} variant="dark">
+          Log Out
         </Button>
+
         <Navbar.Collapse className="justify-content-end"></Navbar.Collapse>
       </Navbar>
     );
