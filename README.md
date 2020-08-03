@@ -1,6 +1,9 @@
 # Bulletin_Board
-# React와 Node js/Express, MongoDB를 활용한 게시판
+React와 Node js/Express, MongoDB를 활용한 게시판
 
+- 프론트엔드(React)
+- 백엔드(Node.js / Express)
+- DB(MongoDB)
 
 #주요 기능 
 
