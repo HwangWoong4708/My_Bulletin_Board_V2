@@ -1,6 +1,12 @@
-# Bulletin_Board_v2
+# Bulletin_Board
+# React와 Node js/Express, MongoDB를 활용한 게시판
 
 
-- 07.29 회원가입 기능 완료.
+#주요 기능 
 
-- 07.30 jquery/jquery-cookie를 이용한 로그인/로그아웃 기능 구현(v1과는 다르게 5회 로그인 실패로인한 잠금 기능 삭제)
+- 회원가입
+- 로그인 및 로그아웃
+- 게시판(글 목록, 글쓰기, 글 수정, 글 삭제)
+
+
+
